@@ -4,7 +4,7 @@
   "description": "node.js authentication mechanisms",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/mohamedisakr/node-auth/issues"
   },
-  "homepage": "https://github.com/mohamedisakr/node-auth#readme"
+  "homepage": "https://github.com/mohamedisakr/node-auth#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
