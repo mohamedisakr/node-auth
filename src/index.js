@@ -1,10 +1,28 @@
+const mongoose = require('mongoose')
 const express = require('express')
+const session = require('express-session')
+const connectRedis = require('connect-redis')
+const Redis = require('ioredis')
+const {
+  REDIS_OPTIONS,
+  SESSION_OPTIONS,
+  APP_PORT,
+  MONGODB_URI,
+  MONGODB_OPTIONS,
+} = require('./config')
 
-const app = express()
+;(async () => {
+  await mongoose.connect(MONGODB_URI, MONGODB_OPTIONS)
+  const RedisStore = connectRedis(session)
+  const client = new Redis(REDIS_OPTIONS)
 
-app.get('/', (req, res) => {
-  res.status(200).json({message: 'done'})
-})
+  const app = express()
 
-const port = 3000
-app.listen(port, () => console.log(`http://localhost:${port}`))
+  app.use(session({...SESSION_OPTIONS, store: new RedisStore({client})}))
+
+  app.get('/', (req, res) => {
+    res.status(200).json({message: 'done'})
+  })
+
+  app.listen(APP_PORT, () => console.log(`http://localhost:${APP_PORT}`))
+})()

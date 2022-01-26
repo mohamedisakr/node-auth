@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/mohamedisakr/node-auth#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "connect-redis": "^6.0.0",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "ioredis": "^4.28.3",
+    "mongoose": "^6.1.8"
   }
 }
