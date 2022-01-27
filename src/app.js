@@ -2,7 +2,7 @@ const express = require('express')
 const session = require('express-session')
 const {SESSION_OPTIONS} = require('./config')
 const {serverError, notFound} = require('./middleware')
-const {register, login} = require('./routes')
+const {register, login, home} = require('./routes')
 
 const createApp = (store) => {
   const app = express()
@@ -10,6 +10,7 @@ const createApp = (store) => {
 
   app.use(session({...SESSION_OPTIONS, store}))
 
+  app.use(home)
   app.use(register)
   app.use(login)
 

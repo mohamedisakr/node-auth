@@ -17,3 +17,11 @@ curl -v localhost:3000/reg
 ```sh
 curl -X POST localhost:3000/login -H 'Content-Type:application/json' -d '{"email":"johndoe@gmail.com", "password":"Password123"}'
 ```
+
+```sh
+curl -v localhost:3000/home
+```
+
+```sh
+curl -v -X POST localhost:3000/logout --cookie ''
+```
