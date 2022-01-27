@@ -1,10 +1,18 @@
 const {isLoggedIn} = require('../auth')
+const {BadRequest, Unauthorized} = require('../errors')
 
 const guest = (req, res, next) => {
   if (isLoggedIn(req)) {
-    return next(new Error('Your are already logged in'))
+    return next(new BadRequest('Your are already logged in'))
   }
   next()
 }
 
-module.exports = {guest}
+const auth = (req, res, next) => {
+  if (!isLoggedIn(req)) {
+    return next(new Unauthorized('Your must be logged in'))
+  }
+  next()
+}
+
+module.exports = {guest, auth}

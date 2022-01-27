@@ -21,7 +21,12 @@ const registerSchema = Joi.object({
   passwordConfirmation,
 })
 
-module.exports = {registerSchema}
+const loginSchema = Joi.object({
+  email,
+  password,
+})
+
+module.exports = {registerSchema, loginSchema}
 /*
 
 At least one lower case letter, (?=.*?[a-z])

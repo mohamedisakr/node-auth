@@ -13,3 +13,7 @@ curl -v -X POST localhost:3000/register -H 'Content-Type:application/json' --coo
 ```sh
 curl -v localhost:3000/reg
 ```
+
+```sh
+curl -X POST localhost:3000/login -H 'Content-Type:application/json' -d '{"email":"johndoe@gmail.com", "password":"Password123"}'
+```

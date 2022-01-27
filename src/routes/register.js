@@ -3,7 +3,7 @@ const {registerSchema, validate} = require('../validation')
 const {User} = require('../models')
 const {login} = require('../auth')
 const {guest, catchAsync} = require('../middleware')
-const BadRequest = require('../errors')
+const {BadRequest} = require('../errors')
 const router = Router()
 
 router.post(

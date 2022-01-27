@@ -1,4 +1,4 @@
-const {registerSchema} = require('./auth')
+const {registerSchema, loginSchema} = require('./auth')
 const {validate} = require('./joi')
 
-module.exports = {registerSchema, validate}
+module.exports = {registerSchema, loginSchema, validate}

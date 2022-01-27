@@ -18,4 +18,4 @@ const SESSION_OPTIONS = {
   saveUninitialized: false,
 }
 
-module.exports = {SESSION_OPTIONS}
+module.exports = {SESSION_OPTIONS, SESSION_NAME}
