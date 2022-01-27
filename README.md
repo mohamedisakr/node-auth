@@ -3,7 +3,7 @@
 ## curl
 
 ```sh
-curl -X POST localhost:3000/register -H 'Content-Type:application/json' \ -d '{"email":"johndoe@gmail.com", "name":"johndoe", "password":"password123", "passwordConfirmation":"password123"}'
+curl -X POST localhost:3000/register -H 'Content-Type:application/json' \ -d '{"email":"johndoe@gmail.com", "name":"johndoe", "password":"Password123", "passwordConfirmation":"Password123"}'
 ```
 
 ```sh
