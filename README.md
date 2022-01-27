@@ -9,3 +9,7 @@ curl -X POST localhost:3000/register -H 'Content-Type:application/json' \ -d '{"
 ```sh
 curl -v -X POST localhost:3000/register -H 'Content-Type:application/json' --cookie 'sid=s%3A8p17J1sXiZPgIVS2JPAQUEKdkew8Mkqq.D1dz9nn4QUh3wvnQWvwbPHzb7neLXDD8v%2BnBEYA0zSE'
 ```
+
+```sh
+curl -v localhost:3000/reg
+```

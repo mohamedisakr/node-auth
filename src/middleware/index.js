@@ -1,3 +1,4 @@
 const {guest} = require('./auth')
+const {catchAsync, serverError, notFound} = require('./errors')
 
-module.exports = {guest}
+module.exports = {guest, catchAsync, serverError, notFound}
