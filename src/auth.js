@@ -6,6 +6,7 @@ const isLoggedIn = (req) => {
 
 const login = (req, userId) => {
   req.session.userId = userId
+  req.session.createdAt = Date.now()
 }
 
 const logout = (req, res) => {
