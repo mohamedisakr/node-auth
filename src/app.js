@@ -1,12 +1,14 @@
 const express = require('express')
 const session = require('express-session')
 const cors = require('cors')
+const morgan = require('morgan')
 const {SESSION_OPTIONS} = require('./config')
 const {serverError, notFound, active, catchAsync} = require('./middleware')
 const {register, login, home} = require('./routes')
 
 const createApp = (store) => {
   const app = express()
+  app.use(morgan('dev'))
   app.use(cors())
   app.use(express.json())
 
