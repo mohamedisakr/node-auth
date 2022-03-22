@@ -17,6 +17,7 @@ userSchema.pre('save', async function () {
   }
 })
 
+// implement async version
 userSchema.methods.matchPassword = function (password) {
   return compare(password, this.password)
 }
