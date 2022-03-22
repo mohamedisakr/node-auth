@@ -8,9 +8,11 @@ const {register, login, home} = require('./routes')
 
 const createApp = (store) => {
   const app = express()
-  app.use(morgan('dev'))
   app.use(cors())
   app.use(express.json())
+  app.use(express.urlencoded({extended: true}))
+
+  app.use(morgan('combined'))
 
   app.use(session({...SESSION_OPTIONS, store}))
 
